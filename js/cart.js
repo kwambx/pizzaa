@@ -4,6 +4,7 @@ const cartButton = document.querySelectorAll(".btn");
 const cartCards =document.querySelectorAll('.card')
 const cartItems=[]
 const  cartCounter=document.querySelector('.cart-count')
+const cartItemsContainer=document.querySelector(".inner-div")
 
 // console.log(cartIcon)
 // console.log(cartContainer)
@@ -21,8 +22,7 @@ for (let button of cartButton) {
     const pizzaName=e.target.parentElement.children[0].textContent
 console.log(pizzaName)
     // ------it transverses upward .card parent----//
-  const  pizzaImage=e.target.closest(".card").querySelector('img').src
-console.log(pizzaImage)
+  const  pizzaImage=e.target.closest(".card").querySelector('img').src;
 //--getting the price as a string slicing out ksh and making price as a number//
     const pizzaPrice=e.target.parentElement.children[2].textContent
     console.log(pizzaPrice)
@@ -71,7 +71,7 @@ cartItems.splice(indexToRemove,1)
   // const cartContainer=document.querySelector(".count")
  
 function updateCartContainer(){
-  cartContainer.innerHTML=""
+  cartItemsContainer.innerHTML=""
 
    
   cartItems.map((cartItem)=>{
@@ -95,14 +95,14 @@ const cartItemRow =document.createElement('div')
      
   `
  
-    cartContainer.appendChild(cartItemRow)
+    cartItemsContainer.appendChild(cartItemRow)
     
     
   })
   const totalContainer=document.createElement('div')
 totalContainer.classList.add('total-container')
 totalContainer.innerHTML=`<h3>Total:ksh <span class="total"> 3000</span></h3>`
-cartContainer.appendChild(totalContainer)
+cartItemsContainer.appendChild(totalContainer)
 
 updatePrice()
 }
