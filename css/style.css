@@ -79,10 +79,10 @@ nav {
   margin: 0 auto;
   background-color: #33d8d0;
   position: absolute;
-  /* left:75%; */
-  right: 0;
+right: 0;
   height:auto;
   padding: 20px;
+  display: none;
 
 }
 .count-nav{
@@ -120,6 +120,7 @@ padding: 0 10px;
 }
 .show-cart {
   width: 800px;
+  display: block;
 }
 
 .hero {
